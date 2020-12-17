@@ -19,6 +19,7 @@ package org.tensorflow.lite.examples.classification;
 import android.Manifest;
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
@@ -40,12 +41,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Size;
 import android.view.Surface;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.material.bottomsheet.BottomSheetBehavior;
@@ -116,7 +115,7 @@ public abstract class CameraActivity extends AppCompatActivity
   private int items2 = -1;
   private int items = -1;
 
-  private Basket basket;
+  public Basket basket;
 
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
@@ -675,6 +674,11 @@ public abstract class CameraActivity extends AppCompatActivity
     }
 
     basketPriceView.setText("₹"+basket.getBasketValue());
+  }
+
+  public void loadBasket(View view){
+    Intent intent = new Intent(CameraActivity.this, BasketActivity.class);
+    startActivity(intent);
   }
 
   private void setNumItems(int i) {

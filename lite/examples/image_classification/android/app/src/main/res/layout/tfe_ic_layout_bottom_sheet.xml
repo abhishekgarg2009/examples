@@ -317,26 +317,17 @@
                 android:textColor="@android:color/background_dark"
                 android:textSize="18sp" />
 
-            <LinearLayout
+            <Button
+                android:id="@+id/basket"
                 android:layout_width="117dp"
                 android:layout_height="32dp"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentBottom="true"
                 android:layout_marginLeft="30dp"
-                android:layout_marginBottom="3dp"
-                android:background="@android:color/darker_gray"
+                android:background="@android:color/holo_green_dark"
                 android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="40dp">
-
-                <TextView
-                    android:id="@+id/basket"
-                    android:layout_width="80dp"
-                    android:layout_height="23dp"
-                    android:gravity="center"
-                    android:text="₹0"
-                    android:textColor="@android:color/black" />
-            </LinearLayout>
+                android:textColor="@android:color/white"
+                android:text="₹0"
+                android:onClick="loadBasket">
+            </Button>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

@@ -139,11 +139,11 @@ public abstract class CameraActivity extends AppCompatActivity
     currentItem2 = new ItemDetails();
     basket = new Basket();
     ClusterMapper.addItem(new ItemDetails());
-    ItemDetails itemDetails1 = new ItemDetails("nachos", 200, "pop", "Nachos", "default");
+    ItemDetails itemDetails1 = new ItemDetails("nachos", 200, "glass", "Nachos", "default");
     ClusterMapper.addItem(itemDetails1);
     SharedPreferenceManager.addItem(getApplicationContext(), itemDetails1);
 
-    ItemDetails itemDetails2 = new ItemDetails("glass", 20, "pop", "3D glasses", "default");
+    ItemDetails itemDetails2 = new ItemDetails("glass", 20, "nachos", "3D glasses", "default");
     ClusterMapper.addItem(itemDetails2);
     SharedPreferenceManager.addItem(getApplicationContext(), itemDetails2);
 
@@ -566,12 +566,12 @@ public abstract class CameraActivity extends AppCompatActivity
         currentItem1 = SharedPreferenceManager.getItem(getApplicationContext(), similarItemIds.get(0));
         recognition1TextView.setText(currentItem1.getDisplayName());
         priceView1.setText("₹" + currentItem1.getPrice());
-        itemImage1.setImageResource(getImageResourceByName(currentItem1.getDisplayName()));
+        itemImage1.setImageResource(getImageResourceByName(currentItem1.getImageUrl()));
 
         currentItem2 = SharedPreferenceManager.getItem(getApplicationContext(), similarItemIds.get(1));
         recognition2TextView.setText(currentItem2.getDisplayName());
         priceView2.setText("₹" + currentItem2.getPrice());
-        itemImage2.setImageResource(getImageResourceByName(currentItem2.getDisplayName()));
+        itemImage2.setImageResource(getImageResourceByName(currentItem2.getImageUrl()));
 
       } else {
         Recognition recognition1 = results.get(1);

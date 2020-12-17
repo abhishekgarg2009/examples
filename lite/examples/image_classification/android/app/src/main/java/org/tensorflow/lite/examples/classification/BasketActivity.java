@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.tensorflow.lite.examples.classification.storage.Basket;
 import org.tensorflow.lite.examples.classification.storage.ItemDetails;
 import org.tensorflow.lite.examples.classification.storage.MyItemList;
+import org.tensorflow.lite.examples.classification.storage.SharedPreferenceManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ public class BasketActivity extends Activity {
 
         Map<String, Integer> itemIdVsCount = Basket.getItemIdVsCount();
         for(String id : itemIdVsCount.keySet()){
-            ItemDetails itemDetails = new ItemDetails("1", 100, "pop", "Popcorn", "1");
+            ItemDetails itemDetails = SharedPreferenceManager.getItem(getApplicationContext(), id);
             MyItemList myList = new MyItemList(itemDetails.getPrice(), itemDetails.getDisplayName(),
                     itemIdVsCount.get(id), getImageResourceByName(itemDetails.getImageUrl()), itemDetails);
             listdata.add(myList);

@@ -136,11 +136,11 @@ public abstract class CameraActivity extends AppCompatActivity
     currentItem1 = new ItemDetails();
     currentItem2 = new ItemDetails();
     ClusterMapper.addItem(new ItemDetails());
-    ItemDetails itemDetails1 = new ItemDetails("nachos", 200, "glass", "Nachos", "default");
+    ItemDetails itemDetails1 = new ItemDetails("nachos", 200, "nachos", "Nachos", "default");
     ClusterMapper.addItem(itemDetails1);
     SharedPreferenceManager.addItem(getApplicationContext(), itemDetails1);
 
-    ItemDetails itemDetails2 = new ItemDetails("glass", 20, "nachos", "3D glasses", "default");
+    ItemDetails itemDetails2 = new ItemDetails("glass", 20, "glass", "3D glasses", "default");
     ClusterMapper.addItem(itemDetails2);
     SharedPreferenceManager.addItem(getApplicationContext(), itemDetails2);
 

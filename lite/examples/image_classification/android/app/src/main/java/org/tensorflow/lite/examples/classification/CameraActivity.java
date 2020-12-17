@@ -551,7 +551,7 @@ public abstract class CameraActivity extends AppCompatActivity
       Recognition recognition = results.get(0);
       if (recognition != null) {
         currentItem = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
-        currentItem = new ItemDetails("Popcorn", 100, "pop");
+        currentItem = new ItemDetails();
 
         if (currentItem != null) {
           recognitionTextView.setText(currentItem.getDisplayName());

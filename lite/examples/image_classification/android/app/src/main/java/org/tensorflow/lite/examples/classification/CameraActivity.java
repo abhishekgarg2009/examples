@@ -53,6 +53,7 @@ import java.util.List;
 import org.tensorflow.lite.examples.classification.env.ImageUtils;
 import org.tensorflow.lite.examples.classification.env.Logger;
 import org.tensorflow.lite.examples.classification.storage.Basket;
+import org.tensorflow.lite.examples.classification.storage.ClusterMapper;
 import org.tensorflow.lite.examples.classification.storage.ItemDetails;
 import org.tensorflow.lite.examples.classification.storage.SharedPreferenceManager;
 import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
@@ -115,8 +116,6 @@ public abstract class CameraActivity extends AppCompatActivity
   private int items2 = -1;
   private int items = -1;
 
-  public Basket basket;
-
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
     LOGGER.d("onCreate " + this);
@@ -135,7 +134,14 @@ public abstract class CameraActivity extends AppCompatActivity
     currentItem = new ItemDetails();
     currentItem1 = new ItemDetails();
     currentItem2 = new ItemDetails();
-    basket = new Basket();
+    ClusterMapper.addItem(new ItemDetails());
+    ItemDetails itemDetails1 = new ItemDetails("nachos", 200, "nachos", "Nachos", "default");
+    ClusterMapper.addItem(itemDetails1);
+    SharedPreferenceManager.addItem(getApplicationContext(), itemDetails1);
+
+    ItemDetails itemDetails2 = new ItemDetails("glass", 20, "glass", "3D glasses", "default");
+    ClusterMapper.addItem(itemDetails2);
+    SharedPreferenceManager.addItem(getApplicationContext(), itemDetails2);
 
     itemCountTextView = findViewById(R.id.threads);
     itemCountTextView1 = findViewById(R.id.threads1);
@@ -541,38 +547,43 @@ public abstract class CameraActivity extends AppCompatActivity
       Recognition recognition = results.get(0);
       if (recognition != null) {
         currentItem = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
-        currentItem = new ItemDetails("Popcorn", 100, "pop");
+        currentItem = new ItemDetails();
 
         if (currentItem != null) {
-          recognitionTextView.setText(currentItem.getId());
+          recognitionTextView.setText(currentItem.getDisplayName());
           priceView.setText("₹" + currentItem.getPrice());
-
           itemImage.setImageResource(getImageResourceByName(currentItem.getImageUrl()));
         }
       }
 
-      Recognition recognition1 = results.get(1);
-      if (recognition1 != null) {
-        currentItem1 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
-        currentItem1 = new ItemDetails("Parle G", 15, "parle");
+      List<String> similarItemIds = ClusterMapper.getSimilarProducts(currentItem);
 
-        if (currentItem1 != null) {
-          recognition1TextView.setText(currentItem1.getId());
-          priceView1.setText("₹" + currentItem1.getPrice());
+      if(similarItemIds.size() >= 2) {
+        currentItem1 = SharedPreferenceManager.getItem(getApplicationContext(), similarItemIds.get(0));
+        recognition1TextView.setText(currentItem1.getDisplayName());
+        priceView1.setText("₹" + currentItem1.getPrice());
+        itemImage1.setImageResource(getImageResourceByName(currentItem1.getImageUrl()));
 
-          itemImage1.setImageResource(getImageResourceByName(currentItem1.getImageUrl()));
+        currentItem2 = SharedPreferenceManager.getItem(getApplicationContext(), similarItemIds.get(1));
+        recognition2TextView.setText(currentItem2.getDisplayName());
+        priceView2.setText("₹" + currentItem2.getPrice());
+        itemImage2.setImageResource(getImageResourceByName(currentItem2.getImageUrl()));
+
+      } else {
+        Recognition recognition1 = results.get(1);
+        if (recognition1 != null) {
+          currentItem1 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
+          if (recognition1.getTitle() != null)
+            recognition1TextView.setText(recognition1.getTitle());
+          priceView1.setText("₹" + 0);
         }
-      }
 
-      Recognition recognition2 = results.get(2);
-      if (recognition2 != null) {
-        currentItem2 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
-
-        if (currentItem2 != null) {
-          recognition2TextView.setText(currentItem2.getId());
-          priceView2.setText("₹" + currentItem2.getPrice());
-
-          itemImage2.setImageResource(getImageResourceByName(currentItem2.getImageUrl()));
+        Recognition recognition2 = results.get(2);
+        if (recognition2 != null) {
+          currentItem2 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
+          if (recognition2.getTitle() != null)
+            recognition2TextView.setText(recognition2.getTitle());
+          priceView2.setText("₹" + 1);
         }
       }
     }
@@ -621,7 +632,7 @@ public abstract class CameraActivity extends AppCompatActivity
       if (numThreads >= 50) return;
       setNumItems(++numThreads);
       itemCountTextView.setText(String.valueOf(numThreads));
-      basket.addItem(currentItem);
+      Basket.addItem(currentItem);
 
     } else if (v.getId() == R.id.minus) {
       String threads = itemCountTextView.getText().toString().trim();
@@ -631,7 +642,7 @@ public abstract class CameraActivity extends AppCompatActivity
       }
       setNumItems(--numThreads);
       itemCountTextView.setText(String.valueOf(numThreads));
-      basket.removeItem(currentItem);
+      Basket.removeItem(currentItem);
     }
 
 
@@ -642,7 +653,7 @@ public abstract class CameraActivity extends AppCompatActivity
       if (numThreads >= 50) return;
       setNumItems1(++numThreads);
       itemCountTextView1.setText(String.valueOf(numThreads));
-      basket.addItem(currentItem1);
+      Basket.addItem(currentItem1);
     } else if (v.getId() == R.id.minus1) {
       String threads = itemCountTextView1.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
@@ -651,7 +662,7 @@ public abstract class CameraActivity extends AppCompatActivity
       }
       setNumItems1(--numThreads);
       itemCountTextView1.setText(String.valueOf(numThreads));
-      basket.removeItem(currentItem1);
+      Basket.removeItem(currentItem1);
     }
 
 
@@ -661,7 +672,7 @@ public abstract class CameraActivity extends AppCompatActivity
       if (numThreads >= 50) return;
       setNumItems2(++numThreads);
       itemCountTextView2.setText(String.valueOf(numThreads));
-      basket.addItem(currentItem2);
+      Basket.addItem(currentItem2);
     } else if (v.getId() == R.id.minus2) {
       String threads = itemCountTextView2.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
@@ -670,10 +681,10 @@ public abstract class CameraActivity extends AppCompatActivity
       }
       setNumItems2(--numThreads);
       itemCountTextView2.setText(String.valueOf(numThreads));
-      basket.removeItem(currentItem2);
+      Basket.removeItem(currentItem2);
     }
 
-    basketPriceView.setText("₹"+basket.getBasketValue());
+    basketPriceView.setText("₹"+Basket.getBasketValue());
   }
 
   public void loadBasket(View view){

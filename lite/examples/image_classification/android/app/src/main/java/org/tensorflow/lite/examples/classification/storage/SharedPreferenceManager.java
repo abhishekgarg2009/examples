@@ -14,7 +14,7 @@ public class SharedPreferenceManager {
     private static SharedPreferences getInstance(Context context) {
         if (instance == null) {
             instance = context.getSharedPreferences(SHARED_PREF_NAME, 0);
-            ItemDetails itemDetails = new ItemDetails("1", "232", "sdfn sjfns");
+            ItemDetails itemDetails = new ItemDetails("1", 232, "sdfn sjfns");
             instance.edit().putString("1", new Gson().toJson(itemDetails)).apply();
         }
         return instance;
@@ -23,7 +23,7 @@ public class SharedPreferenceManager {
     public static ItemDetails getItem(Context context, String id) {
         String itemJson = getInstance(context).getString(id, "");
         if (itemJson == null || itemJson.isEmpty()) {
-            return null;
+            return new ItemDetails();
         } else {
             return new Gson().fromJson(itemJson, ItemDetails.class);
         }

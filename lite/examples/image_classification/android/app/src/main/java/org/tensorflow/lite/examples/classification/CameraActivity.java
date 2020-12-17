@@ -542,6 +542,7 @@ public abstract class CameraActivity extends AppCompatActivity
       Recognition recognition = results.get(0);
       if (recognition != null) {
         currentItem = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
+        currentItem = new ItemDetails("Popcorn", 100, "pop");
 
         if (currentItem != null) {
           recognitionTextView.setText(currentItem.getId());
@@ -554,15 +555,26 @@ public abstract class CameraActivity extends AppCompatActivity
       Recognition recognition1 = results.get(1);
       if (recognition1 != null) {
         currentItem1 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
-        if (recognition1.getTitle() != null) recognition1TextView.setText(recognition1.getTitle());
-        priceView1.setText("₹" + 0);
+        currentItem1 = new ItemDetails("Parle G", 15, "parle");
+
+        if (currentItem1 != null) {
+          recognition1TextView.setText(currentItem1.getId());
+          priceView1.setText("₹" + currentItem1.getPrice());
+
+          itemImage1.setImageResource(getImageResourceByName(currentItem1.getImageUrl()));
+        }
       }
 
       Recognition recognition2 = results.get(2);
       if (recognition2 != null) {
         currentItem2 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
-        if (recognition2.getTitle() != null) recognition2TextView.setText(recognition2.getTitle());
-        priceView2.setText("₹" + 1);
+
+        if (currentItem2 != null) {
+          recognition2TextView.setText(currentItem2.getId());
+          priceView2.setText("₹" + currentItem2.getPrice());
+
+          itemImage2.setImageResource(getImageResourceByName(currentItem2.getImageUrl()));
+        }
       }
     }
   }

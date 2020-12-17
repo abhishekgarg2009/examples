@@ -4,9 +4,9 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 public class ItemDetails {
-    private String Id = "Default Popcorn";
+    private String Id = "Default Brown Bag";
     private int price = 50;
-    private String imageUrl = "pop";
+    private String imageUrl = "brown";
 
     public ItemDetails(String id, int price, String imageUrl) {
         Id = id;

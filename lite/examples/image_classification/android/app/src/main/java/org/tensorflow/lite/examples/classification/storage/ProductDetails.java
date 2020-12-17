@@ -13,14 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDetails {
-    private List<ItemDetails> productDetails = new ArrayList<>();
-
     public ProductDetails(Context context) {
         populateProductDetails(context);
-    }
-
-    public List<ItemDetails> getProductDetails() {
-        return this.productDetails;
     }
 
     public void populateProductDetails(Context context) {
@@ -39,7 +33,7 @@ public class ProductDetails {
                 itemDetails.setCluster(nextLine[1]);
                 itemDetails.setPrice(Integer.parseInt(nextLine[3]));
                 itemDetails.setImageUrl(nextLine[4]);
-                productDetails.add(itemDetails);
+                SharedPreferenceManager.addItem(context, itemDetails);
             }
         } catch (IOException e) {
             System.out.println("Caught Exception while reading csv: " + e);

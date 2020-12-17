@@ -54,6 +54,7 @@ import java.util.List;
 import org.tensorflow.lite.examples.classification.env.ImageUtils;
 import org.tensorflow.lite.examples.classification.env.Logger;
 import org.tensorflow.lite.examples.classification.storage.Basket;
+import org.tensorflow.lite.examples.classification.storage.ClusterMapper;
 import org.tensorflow.lite.examples.classification.storage.ItemDetails;
 import org.tensorflow.lite.examples.classification.storage.SharedPreferenceManager;
 import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
@@ -137,6 +138,14 @@ public abstract class CameraActivity extends AppCompatActivity
     currentItem1 = new ItemDetails();
     currentItem2 = new ItemDetails();
     basket = new Basket();
+    ClusterMapper.addItem(new ItemDetails());
+    ItemDetails itemDetails1 = new ItemDetails("nachos", 200, "pop", "Nachos", "default");
+    ClusterMapper.addItem(itemDetails1);
+    SharedPreferenceManager.addItem(getApplicationContext(), itemDetails1);
+
+    ItemDetails itemDetails2 = new ItemDetails("glass", 20, "pop", "3D glasses", "default");
+    ClusterMapper.addItem(itemDetails2);
+    SharedPreferenceManager.addItem(getApplicationContext(), itemDetails2);
 
     itemCountTextView = findViewById(R.id.threads);
     itemCountTextView1 = findViewById(R.id.threads1);
@@ -550,18 +559,35 @@ public abstract class CameraActivity extends AppCompatActivity
         }
       }
 
-      Recognition recognition1 = results.get(1);
-      if (recognition1 != null) {
-        currentItem1 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
-        if (recognition1.getTitle() != null) recognition1TextView.setText(recognition1.getTitle());
-        priceView1.setText("₹" + 0);
-      }
+      List<String> similarItemIds = ClusterMapper.getSimilarProducts(currentItem);
 
-      Recognition recognition2 = results.get(2);
-      if (recognition2 != null) {
-        currentItem2 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
-        if (recognition2.getTitle() != null) recognition2TextView.setText(recognition2.getTitle());
-        priceView2.setText("₹" + 1);
+      if(similarItemIds.size() >= 2) {
+        currentItem1 = SharedPreferenceManager.getItem(getApplicationContext(), similarItemIds.get(0));
+        recognition1TextView.setText(currentItem1.getDisplayName());
+        priceView1.setText("₹" + currentItem1.getPrice());
+        itemImage1.setImageResource(getImageResourceByName(currentItem1.getDisplayName()));
+
+        currentItem2 = SharedPreferenceManager.getItem(getApplicationContext(), similarItemIds.get(1));
+        recognition2TextView.setText(currentItem2.getDisplayName());
+        priceView2.setText("₹" + currentItem2.getPrice());
+        itemImage2.setImageResource(getImageResourceByName(currentItem2.getDisplayName()));
+
+      } else {
+        Recognition recognition1 = results.get(1);
+        if (recognition1 != null) {
+          currentItem1 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
+          if (recognition1.getTitle() != null)
+            recognition1TextView.setText(recognition1.getTitle());
+          priceView1.setText("₹" + 0);
+        }
+
+        Recognition recognition2 = results.get(2);
+        if (recognition2 != null) {
+          currentItem2 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
+          if (recognition2.getTitle() != null)
+            recognition2TextView.setText(recognition2.getTitle());
+          priceView2.setText("₹" + 1);
+        }
       }
     }
   }

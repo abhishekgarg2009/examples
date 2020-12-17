@@ -5,12 +5,14 @@ public class ItemDetails {
     private int price = 50;
     private String imageUrl = "pop";
     private String displayName = "Popcorn";
+    private String cluster = "default";
 
-    public ItemDetails(String id, int price, String imageUrl, String displayName) {
+    public ItemDetails(String id, int price, String imageUrl, String displayName, String cluster) {
         this.id = id;
         this.price = price;
         this.imageUrl = imageUrl;
         this.displayName = displayName;
+        this.cluster = cluster;
     }
 
     public ItemDetails() {
@@ -46,5 +48,13 @@ public class ItemDetails {
 
     public void setDisplayName(String displayName) {
         this.displayName = displayName;
+    }
+
+    public String getCluster() {
+        return cluster;
+    }
+
+    public void setCluster(String cluster) {
+        this.cluster = cluster;
     }
 }

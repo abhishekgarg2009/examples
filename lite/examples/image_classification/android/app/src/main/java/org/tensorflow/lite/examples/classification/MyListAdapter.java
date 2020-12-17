@@ -13,15 +13,24 @@ import org.tensorflow.lite.examples.classification.storage.Basket;
 import org.tensorflow.lite.examples.classification.storage.MyItemList;
 import org.tensorflow.lite.examples.classification.storage.SharedPreferenceManager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder> {
     private List<MyItemList> listdata;
 
     // RecyclerView recyclerView;
-    public MyListAdapter(List<MyItemList> listdata) {
-        this.listdata = listdata;
+    public MyListAdapter() {
+        this.listdata = new ArrayList<>();
     }
+
+    public void updateList(List<MyItemList> listdata) {
+        this.listdata.clear();
+        this.listdata.addAll(listdata);
+
+        notifyDataSetChanged();
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());

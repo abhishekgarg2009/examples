@@ -220,13 +220,13 @@ public abstract class CameraActivity extends AppCompatActivity
     plusImageView2.setOnClickListener(this);
     minusImageView2.setOnClickListener(this);
 
-    if(Basket.getItemIdVsCount().get(currentItem.getId()) != null && !currentItem.getId().equals("default"))
+    if(Basket.getItemIdVsCount().get(currentItem.getId()) != null)
       itemCountTextView.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem.getId())));
 
-    if(Basket.getItemIdVsCount().get(currentItem2.getId()) != null && !currentItem2.getId().equals("default"))
+    if(Basket.getItemIdVsCount().get(currentItem2.getId()) != null)
       itemCountTextView2.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem2.getId())));
 
-    if(Basket.getItemIdVsCount().get(currentItem1.getId()) != null && !currentItem2.getId().equals("default"))
+    if(Basket.getItemIdVsCount().get(currentItem1.getId()) != null)
       itemCountTextView1.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem1.getId())));
   }
 
@@ -603,13 +603,13 @@ public abstract class CameraActivity extends AppCompatActivity
         }
       }
 
-      if(Basket.getItemIdVsCount().get(currentItem.getId()) != null && !currentItem.getId().equals("default"))
+      if(Basket.getItemIdVsCount().get(currentItem.getId()) != null)
         itemCountTextView.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem.getId())));
 
-      if(Basket.getItemIdVsCount().get(currentItem2.getId()) != null && !currentItem2.getId().equals("default"))
+      if(Basket.getItemIdVsCount().get(currentItem2.getId()) != null)
         itemCountTextView2.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem2.getId())));
 
-      if(Basket.getItemIdVsCount().get(currentItem1.getId()) != null && !currentItem1.getId().equals("default"))
+      if(Basket.getItemIdVsCount().get(currentItem1.getId()) != null)
         itemCountTextView1.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem1.getId())));
 
     }
@@ -658,7 +658,7 @@ public abstract class CameraActivity extends AppCompatActivity
     if (v.getId() == R.id.plus) {
       String threads = itemCountTextView.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
-      if (numThreads >= 50 || currentItem.getId().equals("default")) return;
+      if (numThreads >= 50) return;
       setNumItems(++numThreads);
       itemCountTextView.setText(String.valueOf(numThreads));
       Basket.addItem(currentItem);
@@ -666,7 +666,7 @@ public abstract class CameraActivity extends AppCompatActivity
     } else if (v.getId() == R.id.minus) {
       String threads = itemCountTextView.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
-      if (numThreads == 0 || currentItem.getId().equals("default")) {
+      if (numThreads == 0) {
         return;
       }
       setNumItems(--numThreads);
@@ -679,14 +679,14 @@ public abstract class CameraActivity extends AppCompatActivity
     else if (v.getId() == R.id.plus1) {
       String threads = itemCountTextView1.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
-      if (numThreads >= 50 || currentItem.getId().equals("default")) return;
+      if (numThreads >= 50) return;
       setNumItems1(++numThreads);
       itemCountTextView1.setText(String.valueOf(numThreads));
       Basket.addItem(currentItem1);
     } else if (v.getId() == R.id.minus1) {
       String threads = itemCountTextView1.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
-      if (numThreads == 0 || currentItem.getId().equals("default")) {
+      if (numThreads == 0) {
         return;
       }
       setNumItems1(--numThreads);
@@ -698,14 +698,14 @@ public abstract class CameraActivity extends AppCompatActivity
     else if (v.getId() == R.id.plus2) {
       String threads = itemCountTextView2.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
-      if (numThreads >= 50 || currentItem.getId().equals("default")) return;
+      if (numThreads >= 50) return;
       setNumItems2(++numThreads);
       itemCountTextView2.setText(String.valueOf(numThreads));
       Basket.addItem(currentItem2);
     } else if (v.getId() == R.id.minus2) {
       String threads = itemCountTextView2.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
-      if (numThreads == 0 || currentItem.getId().equals("default")) {
+      if (numThreads == 0) {
         return;
       }
       setNumItems2(--numThreads);

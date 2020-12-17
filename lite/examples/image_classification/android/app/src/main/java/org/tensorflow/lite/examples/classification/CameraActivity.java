@@ -21,6 +21,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.hardware.Camera;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraCharacteristics;
@@ -690,6 +691,7 @@ public abstract class CameraActivity extends AppCompatActivity
   }
 
   public void loadBasket(View view){
+    view.setBackgroundColor(Color.parseColor("#344622"));
     Intent intent = new Intent(CameraActivity.this, BasketActivity.class);
     startActivity(intent);
   }

@@ -1,28 +1,27 @@
 package org.tensorflow.lite.examples.classification.storage;
 
-import android.graphics.drawable.Drawable;
-import android.widget.ImageView;
-
 public class ItemDetails {
-    private String Id = "Default Popcorn";
+    private String id = "Default Popcorn";
     private int price = 50;
     private String imageUrl = "pop";
+    private String displayName = "Popcorn";
 
-    public ItemDetails(String id, int price, String imageUrl) {
-        Id = id;
+    public ItemDetails(String id, int price, String imageUrl, String displayName) {
+        this.id = id;
         this.price = price;
         this.imageUrl = imageUrl;
+        this.displayName = displayName;
     }
 
     public ItemDetails() {
     }
 
     public String getId() {
-        return Id;
+        return id;
     }
 
     public void setId(String id) {
-        Id = id;
+        this.id = id;
     }
 
     public int getPrice() {
@@ -39,5 +38,13 @@ public class ItemDetails {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 }

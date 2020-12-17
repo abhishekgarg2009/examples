@@ -544,9 +544,8 @@ public abstract class CameraActivity extends AppCompatActivity
         currentItem = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
 
         if (currentItem != null) {
-          recognitionTextView.setText(currentItem.getId());
+          recognitionTextView.setText(currentItem.getDisplayName());
           priceView.setText("₹" + currentItem.getPrice());
-
           itemImage.setImageResource(getImageResourceByName(currentItem.getImageUrl()));
         }
       }

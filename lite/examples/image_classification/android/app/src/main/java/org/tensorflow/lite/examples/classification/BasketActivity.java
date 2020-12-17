@@ -42,9 +42,9 @@ public class BasketActivity extends Activity {
 
         Map<String, Integer> itemIdVsCount = Basket.getItemIdVsCount();
         for(String id : itemIdVsCount.keySet()){
-            ItemDetails itemDetails = new ItemDetails("1", 100, "popcorn", "1", "1");
+            ItemDetails itemDetails = new ItemDetails("1", 100, "pop", "Popcorn", "1");
             MyItemList myList = new MyItemList(itemDetails.getPrice(), itemDetails.getDisplayName(),
-                    itemIdVsCount.get(id), getImageResourceByName(itemDetails.getImageUrl()));
+                    itemIdVsCount.get(id), getImageResourceByName(itemDetails.getImageUrl()), itemDetails);
             listdata.add(myList);
         }
 
@@ -58,7 +58,7 @@ public class BasketActivity extends Activity {
         basketPriceView.setText("₹"+Basket.getBasketValue());
     }
 
-    private int getImageResourceByName(String imagename) {
-        return getResources().getIdentifier(imagename, "drawable",this.getPackageName());
+    private int getImageResourceByName(String imageName) {
+        return getResources().getIdentifier(imageName, "drawable", this.getPackageName());
     }
 }

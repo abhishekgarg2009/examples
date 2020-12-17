@@ -37,7 +37,7 @@
         android:padding="4dp">
 
         <ImageView
-            android:id="@+id/minus1"
+            android:id="@+id/minus_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/darker_gray"
@@ -54,7 +54,7 @@
             android:textSize="14sp" />
 
         <ImageView
-            android:id="@+id/plus1"
+            android:id="@+id/plus_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/darker_gray"

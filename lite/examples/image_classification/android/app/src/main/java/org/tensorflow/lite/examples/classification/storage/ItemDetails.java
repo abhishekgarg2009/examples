@@ -1,10 +1,10 @@
 package org.tensorflow.lite.examples.classification.storage;
 
 public class ItemDetails {
-    private String id = "Default Popcorn";
-    private int price = 50;
-    private String imageUrl = "pop";
-    private String displayName = "Popcorn";
+    private String id = "default";
+    private int price = 0;
+    private String imageUrl = "brown";
+    private String displayName = "default";
     private String cluster = "default";
 
     public ItemDetails(String id, int price, String imageUrl, String displayName, String cluster) {

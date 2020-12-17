@@ -50,8 +50,11 @@ public class BasketActivity extends Activity{
         Map<String, Integer> itemIdVsCount = Basket.getItemIdVsCount();
         for(String id : itemIdVsCount.keySet()){
             ItemDetails itemDetails = SharedPreferenceManager.getItem(getApplicationContext(),id);
+
+            int count = id.equals("default") ? 0 : itemIdVsCount.get(id);
+
             MyItemList myList = new MyItemList(itemDetails.getPrice(), itemDetails.getDisplayName(),
-                    itemIdVsCount.get(id), getImageResourceByName(itemDetails.getImageUrl()), itemDetails, id);
+                    count, getImageResourceByName(itemDetails.getImageUrl()), itemDetails, id);
             listData.add(myList);
         }
 

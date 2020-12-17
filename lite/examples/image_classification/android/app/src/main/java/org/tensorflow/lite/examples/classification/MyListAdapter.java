@@ -98,13 +98,13 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
             ItemDetails itemDetails = itemDetailsNameMap.get(name.getText().toString());
             if (v.getId() == R.id.plus_item) {
                 int itemCount = Integer.parseInt(count.getText().toString());
-                if (itemCount >= 50) return;
+                if (itemCount >= 50 || itemDetails.getId().equals("default") ) return;
                 setCurrentCount(++itemCount);
                 count.setText(String.valueOf(itemCount));
                 Basket.addItem(itemDetails);
             } else if (v.getId() == R.id.minus_item) {
                 int itemCount = Integer.parseInt(count.getText().toString());
-                if (itemCount == 0) {
+                if (itemCount == 0 || itemDetails.getId().equals("default")) {
                     return;
                 }
                 setCurrentCount(--itemCount);

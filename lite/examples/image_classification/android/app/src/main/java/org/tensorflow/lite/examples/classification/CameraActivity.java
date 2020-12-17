@@ -132,15 +132,19 @@ public abstract class CameraActivity extends AppCompatActivity
     }
 
 
-    currentItem = new ItemDetails();
+    currentItem =  new ItemDetails("popcorn", 150, "pop", "Popcorn", "products");
     currentItem1 = new ItemDetails();
     currentItem2 = new ItemDetails();
+
     ClusterMapper.addItem(new ItemDetails());
-    ItemDetails itemDetails1 = new ItemDetails("nachos", 200, "nachos", "Nachos", "default");
+    SharedPreferenceManager.addItem(getApplicationContext(), currentItem);
+
+    ClusterMapper.addItem(new ItemDetails());
+    ItemDetails itemDetails1 = new ItemDetails("nachos", 200, "nachos", "Nachos", "products");
     ClusterMapper.addItem(itemDetails1);
     SharedPreferenceManager.addItem(getApplicationContext(), itemDetails1);
 
-    ItemDetails itemDetails2 = new ItemDetails("glass", 20, "glass", "3D glasses", "default");
+    ItemDetails itemDetails2 = new ItemDetails("glass", 20, "glass", "3D glasses", "products");
     ClusterMapper.addItem(itemDetails2);
     SharedPreferenceManager.addItem(getApplicationContext(), itemDetails2);
 
@@ -215,6 +219,15 @@ public abstract class CameraActivity extends AppCompatActivity
 
     plusImageView2.setOnClickListener(this);
     minusImageView2.setOnClickListener(this);
+
+    if(Basket.getItemIdVsCount().get(currentItem.getId()) != null && !currentItem.getId().equals("default"))
+      itemCountTextView.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem.getId())));
+
+    if(Basket.getItemIdVsCount().get(currentItem2.getId()) != null && !currentItem2.getId().equals("default"))
+      itemCountTextView2.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem2.getId())));
+
+    if(Basket.getItemIdVsCount().get(currentItem1.getId()) != null && !currentItem2.getId().equals("default"))
+      itemCountTextView1.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem1.getId())));
   }
 
   protected int[] getRgbBytes() {
@@ -550,7 +563,7 @@ public abstract class CameraActivity extends AppCompatActivity
       Recognition recognition = results.get(0);
       if (recognition != null) {
         currentItem = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
-        currentItem = new ItemDetails();
+        currentItem = new ItemDetails("popcorn", 150, "pop", "Popcorn", "products");
 
         if (currentItem != null) {
           recognitionTextView.setText(currentItem.getDisplayName());
@@ -589,8 +602,21 @@ public abstract class CameraActivity extends AppCompatActivity
           priceView2.setText("₹" + 1);
         }
       }
+
+      if(Basket.getItemIdVsCount().get(currentItem.getId()) != null && !currentItem.getId().equals("default"))
+        itemCountTextView.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem.getId())));
+
+      if(Basket.getItemIdVsCount().get(currentItem2.getId()) != null && !currentItem2.getId().equals("default"))
+        itemCountTextView2.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem2.getId())));
+
+      if(Basket.getItemIdVsCount().get(currentItem1.getId()) != null && !currentItem1.getId().equals("default"))
+        itemCountTextView1.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem1.getId())));
+
     }
   }
+
+
+
 
   private int getImageResourceByName(String imagename) {
     return getResources().getIdentifier(imagename, "drawable",this.getPackageName());
@@ -632,7 +658,7 @@ public abstract class CameraActivity extends AppCompatActivity
     if (v.getId() == R.id.plus) {
       String threads = itemCountTextView.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
-      if (numThreads >= 50) return;
+      if (numThreads >= 50 || currentItem.getId().equals("default")) return;
       setNumItems(++numThreads);
       itemCountTextView.setText(String.valueOf(numThreads));
       Basket.addItem(currentItem);
@@ -640,7 +666,7 @@ public abstract class CameraActivity extends AppCompatActivity
     } else if (v.getId() == R.id.minus) {
       String threads = itemCountTextView.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
-      if (numThreads == 0) {
+      if (numThreads == 0 || currentItem.getId().equals("default")) {
         return;
       }
       setNumItems(--numThreads);
@@ -653,14 +679,14 @@ public abstract class CameraActivity extends AppCompatActivity
     else if (v.getId() == R.id.plus1) {
       String threads = itemCountTextView1.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
-      if (numThreads >= 50) return;
+      if (numThreads >= 50 || currentItem.getId().equals("default")) return;
       setNumItems1(++numThreads);
       itemCountTextView1.setText(String.valueOf(numThreads));
       Basket.addItem(currentItem1);
     } else if (v.getId() == R.id.minus1) {
       String threads = itemCountTextView1.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
-      if (numThreads == 0) {
+      if (numThreads == 0 || currentItem.getId().equals("default")) {
         return;
       }
       setNumItems1(--numThreads);
@@ -672,14 +698,14 @@ public abstract class CameraActivity extends AppCompatActivity
     else if (v.getId() == R.id.plus2) {
       String threads = itemCountTextView2.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
-      if (numThreads >= 50) return;
+      if (numThreads >= 50 || currentItem.getId().equals("default")) return;
       setNumItems2(++numThreads);
       itemCountTextView2.setText(String.valueOf(numThreads));
       Basket.addItem(currentItem2);
     } else if (v.getId() == R.id.minus2) {
       String threads = itemCountTextView2.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
-      if (numThreads == 0) {
+      if (numThreads == 0 || currentItem.getId().equals("default")) {
         return;
       }
       setNumItems2(--numThreads);

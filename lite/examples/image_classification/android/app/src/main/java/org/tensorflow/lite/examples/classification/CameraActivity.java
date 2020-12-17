@@ -117,8 +117,6 @@ public abstract class CameraActivity extends AppCompatActivity
   private int items2 = -1;
   private int items = -1;
 
-  private Basket basket;
-
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
     LOGGER.d("onCreate " + this);
@@ -137,7 +135,6 @@ public abstract class CameraActivity extends AppCompatActivity
     currentItem = new ItemDetails();
     currentItem1 = new ItemDetails();
     currentItem2 = new ItemDetails();
-    basket = new Basket();
     ClusterMapper.addItem(new ItemDetails());
     ItemDetails itemDetails1 = new ItemDetails("nachos", 200, "glass", "Nachos", "default");
     ClusterMapper.addItem(itemDetails1);
@@ -636,7 +633,7 @@ public abstract class CameraActivity extends AppCompatActivity
       if (numThreads >= 50) return;
       setNumItems(++numThreads);
       itemCountTextView.setText(String.valueOf(numThreads));
-      basket.addItem(currentItem);
+      Basket.addItem(currentItem);
 
     } else if (v.getId() == R.id.minus) {
       String threads = itemCountTextView.getText().toString().trim();
@@ -646,7 +643,7 @@ public abstract class CameraActivity extends AppCompatActivity
       }
       setNumItems(--numThreads);
       itemCountTextView.setText(String.valueOf(numThreads));
-      basket.removeItem(currentItem);
+      Basket.removeItem(currentItem);
     }
 
 
@@ -657,7 +654,7 @@ public abstract class CameraActivity extends AppCompatActivity
       if (numThreads >= 50) return;
       setNumItems1(++numThreads);
       itemCountTextView1.setText(String.valueOf(numThreads));
-      basket.addItem(currentItem1);
+      Basket.addItem(currentItem1);
     } else if (v.getId() == R.id.minus1) {
       String threads = itemCountTextView1.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
@@ -666,7 +663,7 @@ public abstract class CameraActivity extends AppCompatActivity
       }
       setNumItems1(--numThreads);
       itemCountTextView1.setText(String.valueOf(numThreads));
-      basket.removeItem(currentItem1);
+      Basket.removeItem(currentItem1);
     }
 
 
@@ -676,7 +673,7 @@ public abstract class CameraActivity extends AppCompatActivity
       if (numThreads >= 50) return;
       setNumItems2(++numThreads);
       itemCountTextView2.setText(String.valueOf(numThreads));
-      basket.addItem(currentItem2);
+      Basket.addItem(currentItem2);
     } else if (v.getId() == R.id.minus2) {
       String threads = itemCountTextView2.getText().toString().trim();
       int numThreads = Integer.parseInt(threads);
@@ -685,10 +682,10 @@ public abstract class CameraActivity extends AppCompatActivity
       }
       setNumItems2(--numThreads);
       itemCountTextView2.setText(String.valueOf(numThreads));
-      basket.removeItem(currentItem2);
+      Basket.removeItem(currentItem2);
     }
 
-    basketPriceView.setText("₹"+basket.getBasketValue());
+    basketPriceView.setText("₹"+Basket.getBasketValue());
   }
 
   private void setNumItems(int i) {

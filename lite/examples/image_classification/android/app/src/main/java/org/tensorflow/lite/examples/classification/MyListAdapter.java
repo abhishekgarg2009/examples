@@ -45,7 +45,7 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.name.setText(listdata.get(position).getItemName());
-        holder.price.setText(String.valueOf(listdata.get(position).getPrice()));
+        holder.price.setText("₹" +String.valueOf(listdata.get(position).getPrice()));
         holder.count.setText(String.valueOf(listdata.get(position).getCount()));
         holder.imageView.setImageResource(listdata.get(position).getImageResource());
     }

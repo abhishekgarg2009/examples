@@ -200,6 +200,8 @@ public abstract class CameraActivity extends AppCompatActivity
     recognition1TextView = findViewById(R.id.detected_item1);
     recognition2TextView = findViewById(R.id.detected_item2);
 
+    basketPriceView.setText("₹"+Basket.getBasketValue());
+
     priceView = findViewById(R.id.price);
     priceView1 = findViewById(R.id.price1);
     priceView2 = findViewById(R.id.price2);

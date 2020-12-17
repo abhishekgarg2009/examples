@@ -21,6 +21,10 @@ public class Basket {
         basketValue += price;
     }
 
+    public static Map<String, Integer> getItemIdVsCount(){
+        return itemIdVsCount;
+    }
+
     public static void addItem(ItemDetails itemDetails){
         if(!itemIdVsCount.containsKey(itemDetails.getId())) {
             itemIdVsCount.put(itemDetails.getId(), 0);

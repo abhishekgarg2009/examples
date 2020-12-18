@@ -14,11 +14,10 @@ import java.util.List;
 
 public class ProductDetails {
     public static void populateProductDetails(Context context) {
-        try {
+        try (CSVReader reader = new CSVReader(new InputStreamReader(
+                context.getAssets().open("lib/productDetails.csv")
+        ))) {
 //            CSVReader reader = new CSVReader(new FileReader("lib/productDetails.csv"));
-             final CSVReader reader = new CSVReader(new InputStreamReader(
-                    context.getAssets().open("lib/productDetails.csv")
-            ));
 
             List resultList = new ArrayList();
             String[] nextLine;

@@ -118,9 +118,15 @@ public abstract class CameraActivity extends AppCompatActivity
   private int items2 = -1;
   private int items = -1;
 
+  private static boolean initialized = false;
+
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
-    ProductDetails.populateProductDetails(getApplicationContext());
+
+    if (!initialized) {
+      ProductDetails.populateProductDetails(getApplicationContext());
+      initialized = true;
+    }
     LOGGER.d("onCreate " + this);
     super.onCreate(null);
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);

@@ -1,69 +1,150 @@
-Almond,Food,Almond 500g,379,almond,almond
-Ariel,Soaps,Ariel Washing Powder,135,ariel,ariel
-Banana,Food,Banana 1Kg,26,banana,banana
-CadburyDairyMilk,Snacks,Cadbury Dairy Milk,40,cadbury,cadbury
-Colgate,Soaps,Colgate Toothpaste,147,colgate,colgate
-DettolSanitizer,Soaps,Dettol Sanitizer,95,dettol,dettol
-DoveShampoo,Soaps,Dove Shampoo,511,dove,dove
-Egg,Food,Egg,35,egg,egg
-Frooti,Snacks,Frooti,10,frooti,frooti
-Harpik,Soaps,Harpic Bathroom Cleaner,86,harpic,harpic
-JimJam,Snacks,Jim Jam Cookies,31,jimjam,jimjam
-TomatoKetchup,Snacks,Kissan Tomato Ketchup,120,ketchup,ketchup
-Maggi,Snacks,Maggi,22,maggi,maggi
-SunflowerOil,Food,Saffola Sunflower Oil,599,oil,oil
-ParleG,Snacks,Parle G Biscuits,10,parle,parle
-SurfExcel,Soaps,Surf Excel,171,surfexcel,surfexcel
-Anjou,Food,Anjou,25,anjou,anjou
-Asparagus,Food,Asparagus,26,asparagus,asparagus
-Aubergine,Food,Aubergine,127,aubergine,aubergine
-Avocado,Food,Avocado,28,avocado,avocado
-Beef-Tomato,Food,Beef-Tomato,29,beef_tomato,beef_tomato
-Brown-Cap-Mushroom,Food,Brown-Cap-Mushroom,130,Brown-Cap-Mushroom,brown-cap-mushroom
-Cabbage,Food,Cabbage,31,Cabbage,cabbage
-Cantaloupe,Food,Cantaloupe,132,Cantaloupe,cantaloupe
-Carrots,Food,Carrots,33,Carrots,carrots
-Conference,Food,Conference,134,Conference,conference
-Cucumber,Food,Cucumber,35,Cucumber,cucumber
-Floury-Potato,Food,Floury-Potato,136,Floury-Potato,floury-potato
-Galia-Melon,Food,Galia-Melon,37,Galia-Melon,galia-melon
-Garlic,Food,Garlic,38,Garlic,garlic
-Ginger,Food,Ginger,39,Ginger,ginger
-Golden-Delicious,Food,Golden-Delicious,40,Golden-Delicious,golden-delicious
-Granny-Smith,Food,Granny-Smith,41,Granny-Smith,granny-smith
-Green-Bell-Pepper,Food,Green-Bell-Pepper,42,Green-Bell-Pepper,green-bell-pepper
-Honeydew-Melon,Food,Honeydew-Melon,43,Honeydew-Melon,honeydew-melon
-Kaiser,Food,Kaiser,44,Kaiser,kaiser
-Kiwi,Food,Kiwi,45,Kiwi,kiwi
-Leek,Food,Leek,146,Leek,leek
-Lemon,Food,Lemon,47,Lemon,lemon
-Lime,Food,Lime,48,Lime,lime
-Mango,Food,Mango,49,Mango,mango
-Nectarine,Food,Nectarine,50,Nectarine,nectarine
-Orange,Food,Orange,51,Orange,orange
-Orange-Bell-Pepper,Food,Orange-Bell-Pepper,52,Orange-Bell-Pepper,orange-bell-pepper
-Papaya,Food,Papaya,53,Papaya,papaya
-Passion-Fruit,Food,Passion-Fruit,54,Passion-Fruit,passion-fruit
-Peach,Food,Peach,55,Peach,peach
-Pineapple,Food,Pineapple,56,Pineapple,pineapple
-Pink-Lady,Food,Pink-Lady,57,Pink-Lady,pink-lady
-Plum,Food,Plum,158,Plum,plum
-Pomegranate,Food,Pomegranate,59,Pomegranate,pomegranate
-Red-Beet,Food,Red-Beet,160,Red-Beet,red-beet
-Red-Bell-Pepper,Food,Red-Bell-Pepper,61,Red-Bell-Pepper,red-bell-pepper
-Red-Delicious,Food,Red-Delicious,162,Red-Delicious,red-delicious
-Red-Grapefruit,Food,Red-Grapefruit,63,Red-Grapefruit,red-grapefruit
-Regular-Tomato,Food,Regular-Tomato,164,Regular-Tomato,regular-tomato
-Royal-Gala,Food,Royal-Gala,65,Royal-Gala,royal-gala
-Satsumas,Food,Satsumas,66,Satsumas,satsumas
-Solid-Potato,Food,Solid-Potato,67,Solid-Potato,solid-potato
-Sweet-Potato,Food,Sweet-Potato,168,Sweet-Potato,sweet-potato
-Vine-Tomato,Food,Vine-Tomato,69,Vine-Tomato,vine-tomato
-Watermelon,Food,Watermelon,70,Watermelon,watermelon
-Yellow-Bell-Pepper,Food,Yellow-Bell-Pepper,71,Yellow-Bell-Pepper,yellow-bell-pepper
-Yellow-Onion,Food,Yellow-Onion,72,Yellow-Onion,yellow-onion
-Zucchini,Food,Zucchini,73,Zucchini,zucchini
-Tropicana-Apple-Juice,Snacks,Tropicana-Apple-Juice,174,Tropicana-Apple-Juice,tropicana-apple-juice
-Tropicana-Golden-Grapefruit,Snacks,Tropicana-Golden-Grapefruit,175,Tropicana-Golden-Grapefruit,tropicana-golden-grapefruit
-Tropicana-Juice-Smooth,Snacks,Tropicana-Juice-Smooth,76,Tropicana-Juice-Smooth,tropicana-juice-smooth
-Tropicana-Mandarin-Morning,Snacks,Tropicana-Mandarin-Morning,77,Tropicana-Mandarin-Morning,tropicana-mandarin-morning
+Almond,Almond,Almond 500g,379,almond
+Apple,Apple,Apple,199,default_fnv
+Ariel,Ariel,Ariel Washing Powder,135,ariel
+Aubergine,Aubergine,Aubergine,127,default_fnv
+Avocado,Avocado,Avocado,28,default_fnv
+Banana,Banana,Banana 1Kg,26,banana
+Brown-Cap-Mushroom,Brown-Cap-Mushroom,Brown-Cap-Mushroom,130,default_fnv
+Cabbage,Cabbage,Cabbage,31,default_fnv
+Cadbury-Dairy-Milk,Cadbury-Dairy-Milk,Cadbury Dairy Milk,40,cadbury
+Carrots,Carrots,Carrots,33,default_fnv
+Cheese,Cheese,Cheese,144,default_fnv
+Colgate,Colgate,Colgate Toothpaste,147,colgate
+Cucumber,Cucumber,Cucumber,35,default_fnv
+Dettol-Sanitizer,Dettol-Sanitizer,Dettol Sanitizer,95,dettol
+Dove-Smapoo,Dove-Smapoo,Dove Shampoo,511,dove
+Egg,Egg,Egg,35,egg
+Frooti,Frooti,Frooti,10,frooti
+Galia-Melon,Galia-Melon,Galia-Melon,37,default_fnv
+Garlic,Garlic,Garlic,38,default_fnv
+Ginger,Ginger,Ginger,39,default_fnv
+Green-Apple,Green-Apple,Green-Apple,255,default_fnv
+Green-Capsicum,Green-Capsicum,Green-Capsicum,45,default_fnv
+Green-Chilli,Green-Chilli,Green-Chilli,25,default_fnv
+Harpik,Harpik,Harpic Bathroom Cleaner,86,harpic
+Honey,Honey,Honey,58,default_fnv
+Jimjam,Jimjam,Jim Jam Cookies,31,jimjam
+Kiwi,Kiwi,Kiwi,45,default_fnv
+Lemon,Lemon,Lemon,47,default_fnv
+Lime,Lime,Lime,48,default_fnv
+Maggi,Maggi,Maggi,22,maggi
+Mango,Mango,Mango,49,default_fnv
+Orange,Orange,Orange,51,default_fnv
+Orange-Capsicum,Orange-Capsicum,Orange-Capsicum,78,default_fnv
+Papaya,Papaya,Papaya,53,default_fnv
+Parle-G,Parle-G,Parle G Biscuits,10,parle
+Peach,Peach,Peach,55,default_fnv
+Pineapple,Pineapple,Pineapple,56,default_fnv
+Plum,Plum,Plum,158,default_fnv
+Pomegranate,Pomegranate,Pomegranate,59,default_fnv
+Potato,Potato,Potato,24,default_fnv
+Red-Beet,Red-Beet,Red-Beet,22,default_fnv
+Red-Capsicum,Red-Capsicum,Red-Capsicum,22,default_fnv
+Sunflower-Oil,Sunflower-Oil,Saffola Sunflower Oil,599,oil
+Surf-Excel,Surf-Excel,Surf Excel,171,surfexcel
+Sweet-Potato,Sweet-Potato,Sweet-Potato,88,default_fnv
+Tomato,Tomato,Tomato,13,default_fnv
+Tomato-Ketchup,Tomato-Ketchup,Tomato-Ketchup,66,default_fnv
+Tropicana-Juice,Tropicana-Juice,Tropicana-Juice,99,default_fnv
+Watermelon,Watermelon,Watermelon,50,default_fnv
+Yellow-Capsicum,Yellow-Capsicum,Yellow-Capsicum,24,default_fnv
+Cashew,Almond,Cashew 500g,500,cashew
+Walnut,Almond,Walnut 500g,400,walnut
+Pear,Apple,Pear 1kg,200,pear
+Custard-Apple,Apple,Custard Apple 4 pcs,300,custard_apple
+Fena,Ariel,Fena Washing Powder,300,fena
+Rin,Ariel,Rin,350,rin
+Baigan,Aubergine,Baigan,200,default_fnv
+Videshi-Baigan,Aubergine,Videshi Baigan,300,default_fnv
+Avocado-Soap,Avocado,Avocado Soap,180,avacado_soap
+Avocado-oil,Avocado,Avocado Baby Oil,300,avocado_oil
+Banana-chips,Banana,Banana Chips,200,banana_chips
+Banana-Cereal,Banana,Banana Cereal,300,banana_cereal
+Wild-Mushroom,Brown-Cap-Mushroom,Wild Musroom,400,default_fnv
+Dark-Mushroom,Brown-Cap-Mushroom,Dark Musroom,590,default_fnv
+Brocoli,Cabbage,Brocoli,435,default_fnv
+Gobi,Cabbage,Gobi,245,default_fnv
+Kit-Kat,Cadbury-Dairy-Milk,Kit Kat,30,kitkat
+Perk,Cadbury-Dairy-Milk,Perk,20,perk
+Radish,Carrots,Radish,43,default_fnv
+Orange-Carrot,Carrots,Orange Carrot,56,default_fnv
+Panner,Cheese,Panner,454,default_fnv
+Butter,Cheese,Butter,34,default_fnv
+Pepsodent,Colgate,Pepsodent Toothpaste,45,pepsodent
+Closeup,Colgate,Closeup,67,closeup
+zucchini,Cucumber,Zucchini,243,default_fnv
+gourd,Cucumber,Gourd,34,default_fnv
+Lifebuoy-Sanitizer,Dettol-Sanitizer,Lifebuoy Sanitizer,342,lifebuoy
+Himalaya-Sanitizer,Dettol-Sanitizer,Himalaya Sanitizer,23,himalaya
+Patanjali-Sampoo,Dove-Smapoo,Patanjali Sampoo,234,patanjali
+Dabur-Sampoo,Dove-Smapoo,Dabur Sampoo,244,dabur
+Vitamin-D-Egg,Egg,Vitamin D Egg,434,d_egg
+Brown-Egg,Egg,Brown Egg,234,b_egg
+Maaza,Frooti,Maaza,35,maaza
+Minute-Maid-Pulpy-Orange,Frooti,Minute Maid Pulpy Orange  (1 L),40,pulpy
+Muskmelon,Galia-Melon,Muskmelon,34,default_fnv
+Cantaloupe,Galia-Melon,Cantaloupe,45,default_fnv
+Onion,Garlic,Onion,34,default_fnv
+Shallot,Garlic,Shallot,34,default_fnv
+Ginger-ale,Ginger,Ginger ale,244,g_ale
+Onion-1,Ginger,Onion 3 kg,34,default_fnv
+Pear-1,Green-Apple,Pear 5kg,200,pear
+Custard-Apple-1,Green-Apple,Custard Apple 2 pcs,300,custard_apple
+Mini-Sweet-Pepper-1,Green-Capsicum,Mini Sweet Pepper 1kg,35,default_fnv
+Banana-Pepper-1,Green-Capsicum,Banana Pepper 1kg,32,default_fnv
+Red-Chilli,Green-Chilli,Red Chilli,24,default_fnv
+Yellow-Chilli,Green-Chilli,Yellow Chilli,43,default_fnv
+Domex,Harpik,Domex,234,domex
+White-Harpic,Harpik,White Harpic,45,white_harpic
+Honey-Tea,Honey,Honey Tea,34,honey_tea
+Honey-Biscuit,Honey,Honey Biscuit,35,honey_biscuit
+Milano,Jimjam,Milano,43,milano
+Oreo,Jimjam,Oreo,20,oreo
+Strawberry,Kiwi,Strawberry,247,default_fnv
+Lychee,Kiwi,Lychee,42,default_fnv
+Lemon-Tea,Lemon,Lemon Tea,80,lemon_tea
+Vim-Lemon,Lemon,Vim Lemon,67,vim_lemon
+Lime-Soap,Lime,Lime Soap,35,lime_soap
+Lime-Dettol,Lime,Lime Dettol,56,lime_dettol
+Yippee,Maggi,Yippee,50,yippee
+Knorr,Maggi,Knorr,49,knorr
+Kaffir-Plum,Mango,Kaffir Plum,79,default_fnv
+Green-Mango,Mango,Green Mango,49,default_fnv
+Mandarin,Orange,Mandarin,30,default_fnv
+Grapefruit,Orange,Grapefruit,50,default_fnv
+Mini-Sweet-Pepper-2,Orange-Capsicum,Mini Sweet Pepper 500g,17,default_fnv
+Banana-Pepper-2,Orange-Capsicum,Banana Pepper 500g,16,default_fnv
+Lychee,Papaya,Lychee,40,default_fnv
+Mangosteen-1,Papaya,Mangosteen 500g,28,default_fnv
+Goodday,Parle-G,Goodday,30,goodday
+Milk-Bikis,Parle-G,Milk Bikis,50,milk-bikis
+Nectarine,Peach,Nectarine,44,default_fnv
+Cherry,Peach,Cherry,40,default_fnv
+Mulberry,Pineapple,Mulberry,89,default_fnv
+Jackfruit,Pineapple,Jackfruit,100,default_fnv
+Apricot,Plum,Apricot,78,default_fnv
+Peach-1,Plum,Peach 500g,57,default_fnv
+Mangosteen,Pomegranate,Mangosteen,59,default_fnv
+Dragon-Fruit,Pomegranate,Dragon Fruit,70,default_fnv
+Jewel-Yam,Potato,Jewel Yam,34,default_fnv
+Russet,Potato,Russet,20,default_fnv
+Cylindra,Red-Beet,Cylindra,120,default_fnv
+Chioggia,Red-Beet,Chioggia,130,default_fnv
+Mini-Sweet-Pepper-3,Red-Capsicum,Mini Sweet Pepper 2kg,70,default_fnv
+Banana-Pepper-3,Red-Capsicum,Banana Pepper 2kg,64,default_fnv
+Coconut-Oil,Sunflower-Oil,Coconut Oil,195,coco_oil
+Rice-Bran-Oil,Sunflower-Oil,Rice Bran Oil,119,rice_bran
+Fena-2,Surf-Excel,Fena Washing Powder 500g,150,fena
+Rin-2,Surf-Excel,Rin Powder,200,rin
+Raddish,Sweet-Potato,Raddish,30,default_fnv
+Yam,Sweet-Potato,Yam,23,default_fnv
+Persimmon,Tomato,Persimmon,54,default_fnv
+Capsicum,Tomato,Capsicum,40,default_fnv
+Green-Chilli-Sauce,Tomato-Ketchup,Green Chilli Sauce,35,green_chilli
+Soy-Sauce,Tomato-Ketchup,Soy Sauce,85,soy_sauce
+B-Naturals,Tropicana-Juice,B Naturals,79,b_natural
+Real-Fruit-Juice,Tropicana-Juice,Real Fruit Juice,89,real_fruit
+Honeydew-Melon,Watermelon,Honeydew Melon,40,honeydew_melon
+Cantaloupe-2,Watermelon,Cantaloupe 1kg,60,default_fnv
+Mini-Sweet-Pepper-4,Yellow-Capsicum,Mini Sweet Pepper 250g,8,default_fnv
+Banana-Pepper-4,Yellow-Capsicum,Banana Pepper 250g,10,default_fnv

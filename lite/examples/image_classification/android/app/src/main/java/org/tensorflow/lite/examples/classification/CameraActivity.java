@@ -56,6 +56,7 @@ import org.tensorflow.lite.examples.classification.env.Logger;
 import org.tensorflow.lite.examples.classification.storage.Basket;
 import org.tensorflow.lite.examples.classification.storage.ClusterMapper;
 import org.tensorflow.lite.examples.classification.storage.ItemDetails;
+import org.tensorflow.lite.examples.classification.storage.ProductDetails;
 import org.tensorflow.lite.examples.classification.storage.SharedPreferenceManager;
 import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
 import org.tensorflow.lite.examples.classification.tflite.Classifier.Model;
@@ -119,6 +120,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
   @Override
   protected void onCreate(final Bundle savedInstanceState) {
+    ProductDetails.populateProductDetails(getApplicationContext());
     LOGGER.d("onCreate " + this);
     super.onCreate(null);
     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);

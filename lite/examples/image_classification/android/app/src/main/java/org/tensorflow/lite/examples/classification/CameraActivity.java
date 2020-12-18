@@ -570,8 +570,8 @@ public abstract class CameraActivity extends AppCompatActivity
     if (results != null && results.size() >= 3) {
       Recognition recognition = results.get(0);
       if (recognition != null) {
-        currentItem = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
-        currentItem = new ItemDetails("popcorn", 150, "pop", "Popcorn", "products");
+        currentItem = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getTitle());
+        //currentItem = new ItemDetails("popcorn", 150, "pop", "Popcorn", "products");
 
         if (currentItem != null) {
           recognitionTextView.setText(currentItem.getDisplayName());
@@ -596,7 +596,7 @@ public abstract class CameraActivity extends AppCompatActivity
       } else {
         Recognition recognition1 = results.get(1);
         if (recognition1 != null) {
-          currentItem1 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
+          currentItem1 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getTitle());
           if (recognition1.getTitle() != null)
             recognition1TextView.setText(recognition1.getTitle());
           priceView1.setText("₹" + 0);
@@ -604,7 +604,7 @@ public abstract class CameraActivity extends AppCompatActivity
 
         Recognition recognition2 = results.get(2);
         if (recognition2 != null) {
-          currentItem2 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getId());
+          currentItem2 = SharedPreferenceManager.getItem(getApplicationContext(), recognition.getTitle());
           if (recognition2.getTitle() != null)
             recognition2TextView.setText(recognition2.getTitle());
           priceView2.setText("₹" + 1);

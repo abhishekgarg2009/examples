@@ -127,6 +127,7 @@ public class ClassifierActivity extends CameraActivity implements OnImageAvailab
   }
 
   private void recreateClassifier(Model model, Device device, int numThreads) {
+    model = Model.FLOAT_MOBILENET;
     if (classifier != null) {
       LOGGER.d("Closing classifier.");
       classifier.close();

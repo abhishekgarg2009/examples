@@ -611,14 +611,23 @@ public abstract class CameraActivity extends AppCompatActivity
         }
       }
 
-      if(Basket.getItemIdVsCount().get(currentItem.getId()) != null)
+      if(Basket.getItemIdVsCount().get(currentItem.getId()) != null) {
         itemCountTextView.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem.getId())));
+      } else {
+        itemCountTextView.setText("0");
+      }
 
-      if(Basket.getItemIdVsCount().get(currentItem2.getId()) != null)
+      if(Basket.getItemIdVsCount().get(currentItem2.getId()) != null) {
         itemCountTextView2.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem2.getId())));
+      } else {
+        itemCountTextView2.setText("0");
+      }
 
-      if(Basket.getItemIdVsCount().get(currentItem1.getId()) != null)
+      if(Basket.getItemIdVsCount().get(currentItem1.getId()) != null) {
         itemCountTextView1.setText(String.valueOf(Basket.getItemIdVsCount().get(currentItem1.getId())));
+      } else {
+        itemCountTextView1.setText("0");
+      }
 
     }
   }

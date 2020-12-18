@@ -29,6 +29,7 @@ public class ProductDetails {
                 itemDetails.setPrice(Integer.parseInt(nextLine[3]));
                 itemDetails.setImageUrl(nextLine[4]);
                 SharedPreferenceManager.addItem(context, itemDetails);
+                ClusterMapper.addItem(itemDetails);
             }
         } catch (IOException e) {
             System.out.println("Caught Exception while reading csv: " + e);
